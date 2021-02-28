@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -45,6 +46,7 @@ public class TimeManager : MonoBehaviour
 
   public int TimeBoost { get => timeBoost; set => timeBoost = value; }
   public static float NormalizedDayAdvancement { get => ((float)instance.counter) / (60 * 24) % 1; }
+
 
   public static int GetTimeInSecond()
   {

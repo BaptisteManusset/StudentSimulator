@@ -46,7 +46,8 @@ public class ClockUi : MonoBehaviour
 
     text += $"{(time.hour).ToString("d2")}:{(time.min).ToString("d2")}\n";
     text += $"{time.dayOfWeek.ToString()}\n";
-    //text += $"Jours n°:{time.dayCount}";
+    text += $"Jours n°:{time.dayCount}\n";
+    text += $"{Mathf.Round(TimeManager.NormalizedDayAdvancement * 100)}%\n";
 
     textUi.text = text;
   }
