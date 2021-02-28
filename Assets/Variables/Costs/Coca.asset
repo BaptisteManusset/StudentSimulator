@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 219261f84c616be43a2d05d86d3f3aad, type: 3}
+  m_Name: Coca
+  m_EditorClassIdentifier: 
+  m_name: Coca
+  description: Du sucre du sucre et encore du sucre
+  tarif: 0.75
+  mental: 5
+  food: 1
+  energy: 20
