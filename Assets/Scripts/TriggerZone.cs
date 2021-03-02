@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 public class TriggerZone : MonoBehaviour
 {
@@ -21,7 +22,9 @@ public class TriggerZone : MonoBehaviour
 
   [Header("Events")]
   [SerializeField] UnityEvent onEnter;
-  [SerializeField] UnityEvent OnExist;
+  [SerializeField] string soundEnter = "click";
+  [SerializeField] UnityEvent onExist;
+  [SerializeField] string soundExist = "click";
 
 
   private void Start()
@@ -29,22 +32,35 @@ public class TriggerZone : MonoBehaviour
     switch (actionOnStart)
     {
       case ActionOnStart.OnEnter:
-        onEnter.Invoke();
+        OnEnter();
         break;
       case ActionOnStart.OnExit:
-        OnExist.Invoke();
+        OnExist();
         break;
     }
   }
 
+  private void OnExist()
+  {
+    if (soundExist.Length > 0) SoundManager.PlayMusic(soundEnter);
+
+    onExist.Invoke();
+  }
+
+  private void OnEnter()
+  {
+    if (soundEnter.Length > 0) SoundManager.PlayMusic(soundExist);
+
+    onEnter.Invoke();
+  }
 
   private void OnTriggerEnter2D(Collider2D collision)
   {
-    if (collision.CompareTag(ObjectTag)) onEnter.Invoke();
+    if (collision.CompareTag(ObjectTag)) OnEnter();
   }
 
   private void OnTriggerExit2D(Collider2D collision)
   {
-    if (collision.CompareTag(ObjectTag)) OnExist.Invoke();
+    if (collision.CompareTag(ObjectTag)) onExist.Invoke();
   }
 }

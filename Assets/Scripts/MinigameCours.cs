@@ -158,6 +158,8 @@ public class MinigameCours : MonoBehaviour
 
   private void DoShake()
   {
+
+    SoundManager.PlayMusic("bipError");
     bulle.transform.DOShakePosition(shakeDuration, strength: shakeStrenght);
     prof.transform.DOShakePosition(shakeDuration, strength: shakeStrenght);
   }

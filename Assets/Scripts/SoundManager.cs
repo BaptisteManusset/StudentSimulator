@@ -12,19 +12,25 @@ public class SoundManager : MonoBehaviour
 
   public static SoundManager Instance = null;
 
+
+  public AudioLibrary audioLibrary;
+
   private void Awake()
   {
     if (Instance == null)
     {
       Instance = this;
-    }
-    else if (Instance != this)
+    } else if (Instance != this)
     {
       Destroy(gameObject);
     }
 
-    DontDestroyOnLoad(gameObject);
+    //DontDestroyOnLoad(gameObject);
   }
+
+
+
+  public static void Play(string key) => Play(GetAudioByKey(key));
 
   public static void Play(AudioClip clip)
   {
@@ -40,6 +46,10 @@ public class SoundManager : MonoBehaviour
     Instance.MusicSource.Play();
   }
 
+  public static void PlayMusic(string key) => PlayMusic(GetAudioByKey(key));
+
+
+
   // Play a random clip from an array, and randomize the pitch slightly.
   public void RandomSoundEffect(params AudioClip[] clips)
   {
@@ -51,4 +61,16 @@ public class SoundManager : MonoBehaviour
     EffectsSource.Play();
   }
 
+
+  public static AudioClip GetAudioByKey(string key)
+  {
+    for (int i = 0; i < Instance.audioLibrary.list.Count; i++)
+    {
+      if (Instance.audioLibrary.list[i].key == key)
+      {
+        return Instance.audioLibrary.list[i].audio;
+      }
+    }
+    return null;
+  }
 }
