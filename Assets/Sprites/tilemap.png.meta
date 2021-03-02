@@ -197,6 +197,9 @@ TextureImporter:
   - first:
       213: 21300128
     second: tilemap_63
+  - first:
+      213: 8490642196906846815
+    second: zzzz
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1600,6 +1603,27 @@ TextureImporter:
       bones: []
       spriteID: c818fcaaac4af3f43bebc5f46e5489cb
       internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zzzz
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 119
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5a239db712d4d570800000000000000
+      internalID: 8490642196906846815
       vertices: []
       indices: 
       edges: []
