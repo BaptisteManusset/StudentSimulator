@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,8 +9,7 @@ public class DevTools : MonoBehaviour
 
   public Tilemap tileMap;
 
-  public List<TileBase> liste;
-  public List<TileBase> listeError;
+  [ShowAssetPreview(128, 128)] public List<TileBase> liste;
 
   [ContextMenu("TilemapList")]
   void TilemapList()
@@ -31,7 +31,8 @@ public class DevTools : MonoBehaviour
         if (slt)
         {
           Debug.Log($"Tiles:{slt} localPlace:{localPlace} place:{place}");
-          liste.Add(slt);
+          if (!liste.Contains(slt))
+            liste.Add(slt);
         }
       }
     }
