@@ -16,7 +16,7 @@ TagManager:
   - 
   - Background
   - PostProcessing
-  - 
+  - Technique
   - 
   - 
   - 
@@ -47,9 +47,6 @@ TagManager:
     locked: 0
   - name: Walls
     uniqueID: 2098876181
-    locked: 0
-  - name: Player
-    uniqueID: 1486983329
     locked: 0
   - name: Objets
     uniqueID: 1462027811
