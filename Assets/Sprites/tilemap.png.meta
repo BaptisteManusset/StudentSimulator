@@ -127,7 +127,7 @@ TextureImporter:
     second: tilemap_39
   - first:
       213: 21300082
-    second: tilemap_40
+    second: corner_top_left_2
   - first:
       213: 21300084
     second: tilemap_41
@@ -202,19 +202,19 @@ TextureImporter:
     second: book
   - first:
       213: 7988907048659085410
-    second: tilemap_1
+    second: corner_top_left
   - first:
       213: 1873917168148291061
-    second: tilemap_2
+    second: corner_top_right
   - first:
       213: 4035501790466999928
     second: ground_1
   - first:
       213: 8923255143942298309
-    second: tilemap_1
+    second: corner_top_left
   - first:
       213: -8390655142792797094
-    second: tilemap_2
+    second: corner_top_right
   - first:
       213: 7561777613838612889
     second: ground_1
@@ -409,7 +409,7 @@ TextureImporter:
     second: tilemap_104
   - first:
       213: 1731697443031409149
-    second: tilemap_105
+    second: corner_top_right_2
   - first:
       213: 6295474923448991246
     second: tilemap_106
@@ -1029,7 +1029,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tilemap_1
+      name: corner_top_left
       rect:
         serializedVersion: 2
         x: 0
@@ -1050,7 +1050,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tilemap_2
+      name: corner_top_right
       rect:
         serializedVersion: 2
         x: 8
@@ -1827,7 +1827,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tilemap_40
+      name: corner_top_left_2
       rect:
         serializedVersion: 2
         x: 0
@@ -3129,7 +3129,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tilemap_105
+      name: corner_top_right_2
       rect:
         serializedVersion: 2
         x: 8
