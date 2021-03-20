@@ -46,9 +46,10 @@ public class TilesTools : EditorWindow
         foreach (Tile item in errorTiles)
         {
           GUILayout.BeginHorizontal();
+          EditorGUILayout.ObjectField(item, typeof(Tile), false, GUILayout.Width(30));
           GUILayout.Label($"{item.name}", GUILayout.Width(200));
           GUILayout.Label($"{item.GetInstanceID()}");
-          EditorGUILayout.ObjectField(item.sprite, typeof(Object), true, GUILayout.Width(300));
+          EditorGUILayout.ObjectField(item.sprite, typeof(Sprite), false);
 
 
 
@@ -74,7 +75,7 @@ public class TilesTools : EditorWindow
     guid = GUILayout.TextField(guid);
     GUILayout.BeginHorizontal();
     GUILayout.FlexibleSpace();
-    if (GUILayout.Button("Get Asset Path", GUILayout.Width(120)))
+    if (GUILayout.Button("Get Asset Path", GUILayout.Width(300)))
       path = GetAssetPath(guid);
     GUILayout.FlexibleSpace();
     GUILayout.EndHorizontal();
@@ -107,7 +108,7 @@ public class TilesTools : EditorWindow
       if (!tile.sprite)
         list.Add(tile);
 
-      Debug.Log($"<{guid1}> {AssetDatabase.GUIDToAssetPath(guid1)} Sprite:<b> {tile.sprite} </b>");
+      //Debug.Log($"<{guid1}> {AssetDatabase.GUIDToAssetPath(guid1)} Sprite:<b> {tile.sprite} </b>");
       //modify prefab
       //AssetDatabase.SaveAssets();
     }

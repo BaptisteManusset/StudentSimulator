@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class Interactable : MonoBehaviour
 {
   [Header("Interaction")]
-  
+
   [SerializeField] Type type = Type.OnCollision;
 
 
@@ -61,15 +61,22 @@ public class Interactable : MonoBehaviour
     }
   }
 
-  public void BeginInteract()
+  public void BeginForInteract()
   {
     interaction = true;
     begin.Invoke();
+  }
+
+  public void WaitForInteract()
+  {
+    ObjetOverlay.ShowE(this);
+    BeginForInteract();
   }
 
   public void EndInteract()
   {
     interaction = false;
     end.Invoke();
+    ObjetOverlay.HideE();
   }
 }

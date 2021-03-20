@@ -69,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
     Interactable interactable = collision.GetComponent<Interactable>();
     if (interactable == null) return;
 
-    interactable.BeginInteract();
+    interactable.WaitForInteract();
   }
 
 
