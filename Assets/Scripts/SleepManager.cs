@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class SleepManager : MonoBehaviour
 {
@@ -34,4 +36,7 @@ public class SleepManager : MonoBehaviour
     TimeManager.instance.TimeBoost = previousTimeBoost;
     Debug.Log("Wake-up");
   }
+
+
+  
 }
