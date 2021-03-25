@@ -6,7 +6,7 @@ public class ObjetOverlay : MonoBehaviour
 {
 
   public static ObjetOverlay instance;
-
+  Interactable actualInteractable;
 
   [SerializeField] GameObject interface_E;
   private void Awake()
@@ -18,12 +18,16 @@ public class ObjetOverlay : MonoBehaviour
   }
   public static void ShowE(Interactable interactable)
   {
-    instance.interface_E.transform.position = Camera.main.WorldToScreenPoint(interactable.transform.position);
+
+    instance.actualInteractable = interactable;
+    instance.interface_E.transform.position = Camera.main.WorldToScreenPoint(instance.actualInteractable.transform.position);
     instance.interface_E.SetActive(true);
+    instance.actualInteractable = null;
   }
   public static void HideE()
   {
     instance.interface_E.SetActive(false);
   }
+
 
 }

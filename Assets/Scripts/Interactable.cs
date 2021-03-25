@@ -6,10 +6,16 @@ using UnityEngine.Events;
 
 public class Interactable : MonoBehaviour
 {
+
+  Coroutine waiting;
+
   [Header("Interaction")]
 
   [SerializeField] Type type = Type.OnCollision;
 
+
+  [SerializeField] bool waitingToInteract = true;
+  bool readyToInteract = false;
 
 
   [Header("Cost")] [Expandable] public Data data;
@@ -21,6 +27,8 @@ public class Interactable : MonoBehaviour
 
   public UnityEvent begin;
   public UnityEvent end;
+
+
 
 
   enum Type
@@ -58,19 +66,40 @@ public class Interactable : MonoBehaviour
         data.food * Time.fixedDeltaTime
         );
       }
+    } else
+    {
+
     }
   }
 
-  public void BeginForInteract()
-  {
-    interaction = true;
-    begin.Invoke();
-  }
+
 
   public void WaitForInteract()
   {
     ObjetOverlay.ShowE(this);
+    waiting = StartCoroutine(nameof(Waiting));
+
     BeginForInteract();
+
+  }
+
+  //public void EnableInteract()
+  //{
+  //  readyToInteract = true;
+  //}
+
+  IEnumerator Waiting()
+  {
+
+    if (waitingToInteract) yield return new WaitUntil(() => readyToInteract);
+    readyToInteract = false;
+
+  }
+
+  private void BeginForInteract()
+  {
+    interaction = true;
+    begin.Invoke();
   }
 
   public void EndInteract()
